@@ -4,6 +4,7 @@
     Author     : SUALAPTOP24h.NET
 --%>
 
+<%@page import="model.admin"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -15,6 +16,13 @@
         <link href="${root}/css/mos-style.css" rel='stylesheet' type='text/css' />
     </head>
     <body>
+        
+        <%
+              admin ad = (admin) session.getAttribute("admin");
+            if (ad != null) {
+                response.sendRedirect("/DEMOWEB/admin/index.jsp");
+            }
+        %>
         <div id="header">
             <div class="inHeaderLogin"></div>
         </div>

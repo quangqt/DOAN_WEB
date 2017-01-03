@@ -14,7 +14,7 @@
     <body>
         <%
             if(session!=null){
-                session.getAttribute("admin");
+                session.removeAttribute("admin");
                 response.sendRedirect("/DEMOWEB/Longin.jsp");
             }
         %>

@@ -19,6 +19,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
         <%
             spDao x = new spDao();
             sp sanpham = new sp();

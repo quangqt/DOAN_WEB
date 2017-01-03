@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : details
     Created on : Dec 9, 2016, 6:12:03 PM
@@ -15,8 +16,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="Buy_shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+              Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -107,48 +110,72 @@
                     session.setAttribute("cart", cart);
                 }
             %>
-
+        <a href="index.jsp"><img src="http://donghoduyanh.com/upload/images/icon21453711989.jpg" width="100px" height="50px"/></a>
         <div class="header_bottom men_border">
             <div class="container">
-                <div class="col-xs-8 header-bottom-left">
-                    <div class="col-xs-2 logo">
-                        <a href="index.jsp"><img src="http://donghoduyanh.com/upload/images/icon21453711989.jpg" width="100px" height="50px"/></a>
-                    </div>
-                    <div class="col-xs-6 menu">
-                        <ul class="megamenu skyblue">
-                            <%
-                                for (loaisp c : y.getListLoaisp()) {
-                            %>
-                            <li><a class="color5" href="sanpham.jsp?loaisp=<%=c.getMaloai()%>"><%=c.getTenloai()%></a></li>
-                                <%
-                                    }
-                                %>
-                        </ul> 
-                    </div>
-                </div>
-                 <div class="col-xs-4 header-bottom-right">
-                    <div class="box_1-cart">
-                        <div class="box_11"><a href="giohang.jsp">
+                <header>
 
-                                <h4><p>Cart:<%=cart.countItem()%></p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
-                            </a>
+                    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+                        <div class="container">
+
+                            <div class="navbar-header">
+
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse">
+
+                                    <span class="sr-only">Toggle navigation</span>
+
+                                    <span class="icon-bar"></span>
+
+                                    <span class="icon-bar"></span>
+
+                                    <span class="icon-bar"></span>
+
+                                </button>
+
+                            </div>
+
+                            <div class="collapse navbar-collapse" id="collapse">
+
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li><a href="index.jsp">Trang Chủ</a></li>
+                                        <%
+                                            for (loaisp c : y.getListLoaisp()) {
+                                        %>
+                                    <li><a href="sanpham.jsp?maloai=<%=c.getMaloai()%>&pages=1"><%=c.getTenloai()%></a></li>
+                                        <%
+                                            }
+                                        %>
+                                    <li><a href="banner.jsp">Địa chỉ</a></li>
+                                </ul>
+                                <div class="box_1-cart">
+                                    <div class="box_11"><a href="giohang.jsp">
+
+                                            <h4><p>Cart:<%=cart.countItem()%></p><img src="images/bag.png" alt=""/><div class="clearfix"> </div></h4>
+                                        </a>
+                                    </div>
+                                    <p class="empty"><a href="index.jsp" class="simpleCart_empty"><%if (users != null) {%>
+                                            Xin Chào:<%=users.getUserName()%>
+                                        </a>|<a href="dangxuat.jsp" class="simpleCart_empty">Đăng Xuất</a></p>
+                                        <%} else {%>
+                                    <p class="empty"><a href="register.jsp" class="simpleCart_empty">Đăng Ký</a></p>
+                                    <p class="empty"><a href="login.jsp">Đăng Nhập</a></p>
+                                    <%}%>
+                                </div>
+                            </div>
+
                         </div>
-                        <p class="empty"><a href="index.jsp" class="simpleCart_empty"><%if (users != null) {%>
-                                Xin Chào:<%=users.getUserName()%>
-                            </a>|<a href="dangxuat.jsp" class="simpleCart_empty">Đăng Xuất</a></p>
-                        <%} else {%>
-                        <p class="empty"><a href="register.jsp" class="simpleCart_empty">Đăng Ký</a></p>
-                        <p class="empty" data-toggle="modal" data-target="#myModal"><a>Đăng Nhập</a></p>
-                        <%}%>
-                    </div>
 
-                </div>
+                    </nav>
+
+                </header>
+
             </div>
         </div>
-                    <div class="container">
-                    <img src="images/anhbia.png" width="100%"/>
-                    </div>  
-                    <h3 style="color: red;text-align: center">Thông tin sản phẩm</h3>
+        <div class="container">
+            <img src="images/anhbia.png" width="100%"/>
+        </div>  
+        <h3 style="color: red;text-align: center">Thông tin sản phẩm</h3>
         <div class="single_top">
             <div class="container"> 
                 <div class="single_grid">
@@ -183,16 +210,16 @@
                             <div class="size_2-right"><a href="CartServlet?command=plus&Masp=<%=sanpham.getMasp()%>" class="item_add item_add1 btn_5" value="" />Thêm vào Giỏ Hàng</a></div>
 
                         </div>
-                            
+
                     </div>
-                                        <div class="fb-comments" data-href="https://www.facebook.com/quag.tran" data-width="100%" data-numposts="5"></div></div> 
+                    <div class="fb-comments" data-href="https://www.facebook.com/quag.tran" data-width="100%" data-numposts="5"></div></div> 
 
-                    <div class="clearfix"></div>
-                </div>
-
+                <div class="clearfix"></div>
             </div>
+
         </div>
-        <div class="container">
-            <jsp:include page="footer.jsp"></jsp:include>
-    </body>
+    </div>
+    <div class="container">
+        <jsp:include page="footer.jsp"></jsp:include>
+</body>
 </html>
